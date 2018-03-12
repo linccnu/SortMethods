@@ -1,3 +1,12 @@
+/*	file:		InsertSort.cpp
+ *	brief:		Insert sort methods implement
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.11
+ *	version:	v1.0.0
+ */
+
 #include "SortMethods.h"
 
 void InsertSort(int *pArr)

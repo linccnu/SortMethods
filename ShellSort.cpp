@@ -1,3 +1,12 @@
+/*	file:		ShellSort.cpp
+ *	brief:		Shell sort methods implement
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.12
+ *	version:	v1.0.0
+ */
+
 #include "SortMethods.h"
 
 void ShellSort(int *arr)

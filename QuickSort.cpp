@@ -1,18 +1,16 @@
-//**************************************************************************
+/*	file:		QuickSort.cpp
+ *	brief:		Quick sort methods implement
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.12
+ *	version:	v1.0.0
+ */
+
 #include "SortMethods.h"
 #include "InOutPut.h"
 #include <ctime>
-#include <exception>
-//using namespace std;
 
-void QuickSort_Test(int *arr,double &ltime)
-{
-	double tstart=clock();
-	QuickSort(arr,0,N-1);
-	double tend=clock();
-	ltime=tend-tstart;
-	//OutputNumber(arr,N);
-}
 void QuickSort(int *arr,int start,int end)
 {
 	if(start==end)

@@ -1,23 +1,23 @@
+/*	file:		MergeSort.cpp
+ *	brief:		Merge sort methods implement
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.12
+ *	version:	v1.0.0
+ */
+
 #include "SortMethods.h"
 #include "InOutPut.h"
 #include <ctime>
-#include <exception>
 
-void MergeSort_Test(int *arr,double &ltime)
-{
-	double tstart=clock();
-	Merge_Sort(arr,0,N-1);
-	double tend=clock();
-	ltime=tend-tstart;
-	//OutputNumber(arr,N);
-}
 
-void Merge_Sort(int *arr,int lhs,int rhs)
+void MergeSort(int *arr,int lhs,int rhs)
 {
 	if(lhs<rhs){
 		int median=(lhs+rhs)>>1;
-		Merge_Sort(arr,lhs,median);
-		Merge_Sort(arr,median+1,rhs);
+		MergeSort(arr,lhs,median);
+		MergeSort(arr,median+1,rhs);
 		Merge(arr,lhs,median,rhs);
 	}
 }

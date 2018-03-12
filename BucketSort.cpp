@@ -1,7 +1,15 @@
+/*	file:		BucketSort.cpp
+ *	brief:		Bucket Heap sort methods implement
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.12
+ *	version:	v1.0.0
+ */
+
 #include "SortMethods.h"
 #include "InOutPut.h"
 #include <ctime>
-#include <exception>
 
 struct BNode{
 	int num;
@@ -9,16 +17,6 @@ struct BNode{
 };
 typedef struct BNode Node;
 Node **arrB=(Node**)malloc(NBucket*sizeof(Node*));
-
-void BucketSort_Test(int *arr,double &ltime)
-{
-	SetBuckets(arrB);
-	double tstart=clock();
-	Bucket_Sort(arr);
-	double tend=clock();
-	ltime=tend-tstart;
-	//Print_Buckets(arrB);
-}
 
 void SetBuckets(Node **arrB)
 {
@@ -28,18 +26,18 @@ void SetBuckets(Node **arrB)
 		arrB[ii]->num=0;
 	}
 }
-void Bucket_Sort(int *arr)
+void BucketSort(int *arr)
 {
-	if(arr==NULL)
+	if(arr == NULL)
 	{
 		printf("param is null\n");
 		return;
 	}
 	for(int ii=0;ii<N;++ii)
-		Insert_Buckets(arr[ii]);
+		InsertBuckets(arr[ii]);
 }
 
-void Insert_Buckets(int temp)
+void InsertBuckets(int temp)
 {
 	Node *pNode=(Node *)malloc(sizeof(Node));
 	pNode->next=NULL;
@@ -50,10 +48,10 @@ void Insert_Buckets(int temp)
 	if(ptr->next==NULL)
 		ptr->next=pNode;
 	else
-		arrB[flag]=InsertSort(pNode,flag);
+		arrB[flag]=Insert(pNode,flag);
 }
 
-Node *InsertSort(Node *pNode,int flag)
+Node *Insert(Node *pNode,int flag)
 {
 	Node *phead=arrB[flag];
 	Node *ptr=phead;
@@ -64,7 +62,7 @@ Node *InsertSort(Node *pNode,int flag)
 	return phead;
 }
 
-void Print_Buckets(Node **arrB)
+void PrintBuckets(Node **arrB)
 {
 	Node *ptr=NULL;
 	for(int jj=0;jj<NBucket ;++jj){

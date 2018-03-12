@@ -1,5 +1,11 @@
-// Sorting_Algorithms_Test.cpp : 定义控制台应用程序的入口点。
-//
+/*	file:		Test.cpp
+ *	brief:		Test demo
+ *
+ *	author:		zhonglin
+ *  email:		lin_nudt0625@163.com
+ *	date:		2018.3.11
+ *	version:	v1.0.0
+ */
 
 #include <cstring>
 #include <sys/time.h>
@@ -16,65 +22,72 @@ long GetMilliSecond()
 	return stTime.tv_sec*1000 + stTime.tv_usec/1000;
 }
 
+/* 主函数入口处 */
 int main()
 {
-	long lStart 	= 0;
-	long lTimeUsed	= 0;
-	int arr[N]={0};
-	//cout<<"The input Numbers are-----------------------"<<endl;
-	//OutputNumber(arr,N);
+	long 	lStart 		= 0;
+	long 	lTimeUsed	= 0;
+
+	int 	arrNumber[N];
+	memset(arrNumber, 0x0, sizeof(arrNumber));
 	cout<<"*******************************Begin Sorting!**********************"<<endl;
 
-	InputNumber(arr,N);
+	InputNumber(arrNumber, N);
 	printf("\n<1>BubbleSort begins.\n");
 	lStart = GetMilliSecond();
-	BubbleSort(arr);	
+	BubbleSort(arrNumber);	
 	lTimeUsed = GetMilliSecond() - lStart;
 	printf("Bubble Sorted-time spending is %ld\n ms", lTimeUsed);
 
-	InputNumber(arr,N);
+	InputNumber(arrNumber, N);
 	printf("\n<2>SelectionSort begins.\n");
 	lStart = GetMilliSecond();
-	SelectionSort(arr);	
+	SelectionSort(arrNumber);	
 	lTimeUsed = GetMilliSecond() - lStart;
 	printf("Selection Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
+	InputNumber(arrNumber, N);
 	printf("\n<3>InsertSort begins.\n");
 	lStart = GetMilliSecond();
-	InsertSort(arr);
+	InsertSort(arrNumber);
 	lTimeUsed = GetMilliSecond() - lStart;
 	printf("Insert Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
-	cout<<endl<<"<4>ShellSort begins."<<endl;
+	InputNumber(arrNumber, N);
+	printf("\n<4>ShellSort begins.\n");
 	lStart = GetMilliSecond();
-	ShellSort(arr);
+	ShellSort(arrNumber);
+	lTimeUsed = GetMilliSecond() - lStart;
 	printf("Shell Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
-	cout<<endl<<"<5>MergeSort begins."<<endl;
-	double TimeOfMergeSort;
-	MergeSort_Test(arr,TimeOfMergeSort);
-	cout<<"Total Sorted-time spending is "<<TimeOfMergeSort<<"ms"<<endl;
+	InputNumber(arrNumber, N);
+	printf("\n<5>MergeSort begins.\n");
+	lStart = GetMilliSecond();
+	MergeSort(arrNumber, 0, N-1);
+	lTimeUsed = GetMilliSecond() - lStart;
+	printf("Merge Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
-	cout<<endl<<"<6>MaxHeapSort begins."<<endl;
-	double TimeOfMaxHeapSort;
-	MaxHeap_Test(arr,TimeOfMaxHeapSort);
-	cout<<"Total Sorted-time spending is "<<TimeOfMaxHeapSort<<"ms"<<endl;
+	InputNumber(arrNumber, N);
+	printf("\n<6>MaxHeapSort begins.\n");
+	lStart = GetMilliSecond();
+	HeapSort(arrNumber);
+	lTimeUsed = GetMilliSecond() - lStart;
+	printf("MaxHeap Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
-	cout<<endl<<"<7>QuickSort begins."<<endl;
-	double TimeOfQucikSort;
-	QuickSort_Test(arr,TimeOfQucikSort);
-	cout<<"Total Sorted-time spending is "<<TimeOfQucikSort<<"ms"<<endl;
+	InputNumber(arrNumber, N);
+	printf("\n<7>QuickSort begins.\n");
+	lStart = GetMilliSecond();
+	QuickSort(arrNumber, 0, N-1);
+	lTimeUsed = GetMilliSecond() - lStart;
+	printf("Quick Sorted-time spending is %ld ms\n", lTimeUsed);
 
-	InputNumber(arr,N);
-	cout<<endl<<"<8>BucketSort begins."<<endl;
-	double TimeOfBucketSort;
-	BucketSort_Test(arr,TimeOfBucketSort);
-	cout<<"Total Sorted-time spending is "<<TimeOfBucketSort<<"ms"<<endl;
+	InputNumber(arrNumber, N);
+	printf("\n<8>BucketSort begins.\n");
+	lStart = GetMilliSecond();
+	BucketSort(arrNumber);
+	lTimeUsed = GetMilliSecond() - lStart;
+	printf("Bucket Sorted-time spending is %ld ms\n", lTimeUsed);
+
 	return 0;
 }
 
