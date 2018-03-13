@@ -11,43 +11,61 @@
 #include "InOutPut.h"
 #include <ctime>
 
-void QuickSort(int *arr,int start,int end)
+void QuickSort(int *pArr, int nStart, int nEnd)
 {
-	if(start==end)
+	if(nStart == nEnd)
 		return;
-	int index=Partition(arr,start,end);
-	if(start<index)
-		QuickSort(arr,start,index-1);
-	if(index<end)
-		QuickSort(arr,index+1,end);
+	int nIndex = Partition(pArr, nStart, nEnd);
+
+	if(nStart < nIndex)
+	{
+		QuickSort(pArr, nStart, nIndex-1);
+	}
+		
+	if(nIndex < nEnd)
+	{
+		QuickSort(pArr, nIndex+1, nEnd);
+	}
+		
 }
 
-int Partition(int *arr,int start,int end)
+
+int Partition(int *pArr, int nStart, int nEnd)
 {
-	if(arr==NULL || start<0 ||end>=N)
+	if(pArr == NULL || nStart < 0 ||nEnd >= N)
 	{
 		printf("param is null.\n");
+		return -1;
 	}
-	int index=RandomInRange(start,end);
-	Swap(&arr[index], &arr[end]);
+	int nIndex = RandomInRange(nStart, nEnd);
+	Swap(&pArr[nIndex], &pArr[nEnd]);
 
-	int flag=start-1;
-	for(int ii=start;ii<end;++ii){
-		if(arr[ii]<arr[end]){
-			++flag;
-			if(flag!=ii)
-				Swap(&arr[flag], &arr[ii]);
+	int nFlag = nStart - 1;
+	for(int ii = nStart; ii < nEnd; ++ii)
+	{
+		if(pArr[ii] < pArr[nEnd])
+		{
+			++nFlag;
+			if(nFlag != ii )
+			{
+				Swap(&pArr[nFlag], &pArr[ii]);
+			}
 		}
 	}
-	++flag;
-	Swap(&arr[flag], &arr[end]);
-	return flag;
+
+	++nFlag;
+	Swap(&pArr[nFlag], &pArr[nEnd]);
+
+	return nFlag;
 }
 
-int RandomInRange(int start,int end)
+
+int RandomInRange(int nStart, int nEnd)
 {
-	int range,flag;
-	range=end-start;
-	flag=rand()%range+start;
-	return flag;
+	int nRange = 0;
+	int nFlag  = 0;
+	nRange = nEnd - nStart;
+	nFlag = rand()%nRange + nStart;
+
+	return nFlag;
 }

@@ -35,12 +35,12 @@ void Merge(int *pArr, int nLeft, int nMedian, int nRight);
 /* MaxHeap sort method */
 void HeapSort(int *pArr);
 void BuildMaxHeap(int *pArr);
-void MaxHeapify(int *pArr, int);
+void MaxHeapify(int *pArr, int nFlag);
 
 /* Quick sort method */
-void QuickSort(int *pArr, int, int);
-int Partition(int *pArr, int, int);
-int RandomInRange(int, int);
+void QuickSort(int *pArr, int nStart, int nEnd);
+int Partition(int *pArr, int nStart, int nEnd);
+int RandomInRange(int nStart, int nEnd);
 
 /* Bucket sort method */
 typedef struct BNode Node;
