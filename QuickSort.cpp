@@ -19,12 +19,12 @@ void QuickSort(int *pArr, int nStart, int nEnd)
 
 	if(nStart < nIndex)
 	{
-		QuickSort(pArr, nStart, nIndex-1);
+		QuickSort(pArr, nStart, nIndex - 1);
 	}
 		
 	if(nIndex < nEnd)
 	{
-		QuickSort(pArr, nIndex+1, nEnd);
+		QuickSort(pArr, nIndex + 1, nEnd);
 	}
 		
 }
