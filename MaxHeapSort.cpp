@@ -21,7 +21,8 @@ void HeapSort(int *pArr)
 		return;
 	}
 	BuildMaxHeap(pArr);
-	for(int ii = nHeapSize - 1; ii >= 1; --ii){
+	for(int ii = nHeapSize - 1; ii >= 1; --ii)
+	{
 		Swap(&pArr[0], &pArr[ii]);
 		nHeapSize -= 1;
 		MaxHeapify(pArr,0);
