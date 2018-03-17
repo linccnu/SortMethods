@@ -37,7 +37,7 @@ int main()
 	lStart = GetMilliSecond();
 	BubbleSort(arrNumber);	
 	lTimeUsed = GetMilliSecond() - lStart;
-	printf("Bubble Sorted-time spending is %ld\n ms", lTimeUsed);
+	printf("Bubble Sorted-time spending is %ld ms\n", lTimeUsed);
 
 	InputNumber(arrNumber, N);
 	printf("\n<2>SelectionSort begins.\n");
