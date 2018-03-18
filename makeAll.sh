@@ -73,4 +73,9 @@ case $type in
 		echo "---select to remove the invalid folders."
 		Clear
 		;;
+	*)
+		echo "#######################################"
+		echo "ERROR:输入类型($type) 不匹配，无法执行!"
+		echo "#######################################"
 esac
+
