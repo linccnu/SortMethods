@@ -5,7 +5,7 @@ PROJECT(Test)
 SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 
 #set compiler param
-SET(CMAKE_CXX_FLAGS    "-std=c++11 -pthread")
+SET(CMAKE_CXX_FLAGS    "-std=c++11 -pthread -g")
 
 #set include dir
 #INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

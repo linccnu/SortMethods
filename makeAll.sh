@@ -6,7 +6,11 @@
 #########################################################################
 #!/bin/bash
 
-cur_dir=$(pwd)
+cur_dir=$(cd `dirname $0`;pwd)
+echo "dirname:$cur_dir"
+exec_file=$(basename $0)
+echo $exec_file
+echo `basename $0`
 
 bin_file="$cur_dir/bin"
 build_file="$cur_dir/build"
@@ -37,7 +41,7 @@ ProcDemo()
 	
 	#begin to excute the executable file
 	cd $bin_file
-	./demo
+	gdb ./demo
 	echo ""
 }
 
@@ -78,4 +82,3 @@ case $type in
 		echo "ERROR:输入类型($type) 不匹配，无法执行!"
 		echo "#######################################"
 esac
-
