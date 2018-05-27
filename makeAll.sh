@@ -5,6 +5,8 @@
 # Description:create build&bin file folder and compiler the source codes
 #########################################################################
 #!/bin/bash
+today=`date +%F`
+echo $today
 
 cur_dir=$(cd `dirname $0`;pwd)
 echo "dirname:$cur_dir"
