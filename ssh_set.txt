@@ -8,3 +8,11 @@ $ssh-keygen -t rsa -C "971189094@qq.com"
 $ssh -T git@github.com
 
 
+#----------some shell and vim useful command------------2018-05-27
+1.copy a word, we can use comand yw, then you can use command p to paste the word anywhere you want. cw if also you can use to delete
+2.copy a word, we can use comand v-e-y, then you can use command v-e-p to paste the word anywhere you want
+3.copy some characters, we can use command nyl(example:5yl), then you can use command p to paste the word anywhere you want
+4.change one characters, we can use command r
+5.we can use ctl+r command to search the history shell command you have used.
+6.we can use ctl+f/b to roll the page once. forward---f, back---b
+7.we can use ctl+u/d to roll the half page once. up---u, down---d
