@@ -63,3 +63,13 @@
    INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
   
    cd ~/caffe; sudo make pycaffe
+
+
+   Q1:can not find module skimage.io
+   python-matplotlib python-sklearn python-skimage
+  
+   Q2:ImportError: No module named google.protobuf.internal
+   sudo chmod 777 -R anaconda2
+   conda install protobuf
+   vim ~/.bashrc
+   export PATH="/home/zhonglin/anaconda2/bin:/anaconda2/lib/python2.7/site-packages:$PATH"
