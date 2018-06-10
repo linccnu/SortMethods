@@ -1,0 +1,13 @@
+1.sudo apt-get install g++
+  sudo apt-get install vim
+  sudo apt-get install git
+
+2.cd /etc/apt/
+  sudo cp source.list source.list.bak
+  sudo vim surce.list #add ali-deb in the head file
+
+3.sudo apt-get update
+  sudo apt-get install nvidia-390 #my host GPU is Gefoce 960
+  sudo apt-get install mesa-common-dev
+  sudo apt-get install freeglut3-dev 
+  sudo reboot
