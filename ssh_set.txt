@@ -7,6 +7,10 @@ $ssh-keygen -t rsa -C "971189094@qq.com"
 "test ssh"
 $ssh -T git@github.com
 
+git remote add origin git@github.com:linccnu/SortMethods.git
+git push origin master
+#at here you have push you changed or add to the remote reposite
+
 
 #----------some shell and vim useful command------------2018-05-27
 1.copy a word, we can use comand yw, then you can use command p to paste the word anywhere you want. cw if also you can use to delete
