@@ -76,4 +76,5 @@
    vim ~/.bashrc
    export PATH="/home/zhonglin/anaconda2/bin:/anaconda2/lib/python2.7/site-packages:$PATH"
 
-   
+  Q3:ImportError: No module named yaml
+  sudo apt-get install python-yaml 
