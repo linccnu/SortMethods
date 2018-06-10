@@ -11,3 +11,36 @@
   sudo apt-get install mesa-common-dev
   sudo apt-get install freeglut3-dev 
   sudo reboot
+
+4.sudo chmod 777 cuda_8.0.61_375.26_linux.run
+  sudo ./cuda_8.0.61_375.26_linux.run
+  // note here,where driver option, select no
+  
+  sudo vim .bashrc
+  #add in the file end with following
+     export PATH=/usr/local/cuda-8.0/bin:$PATH
+     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+  souce .bashrc
+  sudo ldconfig
+  nvcc --version
+
+5.sudo tar -zxvf cudnn-8.0-linux-x64-v5.1.tgz 
+  sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+  sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+  sudo chmod a+r /usr/local/cuda/include/cudnn.h
+  sudo chmod a+r /usr/local/cuda/lib64/libcudnn*  
+  
+  sudo rm -rf libcudnn.so libcudnn.so.5
+  sudo ln -s libcudnn.so.5.1.10 libcudnn.so.5
+  sudo ln -s libcudnn.so.5 libcudnn.so
+
+  sudo vim /etc/profile
+  在末尾加入
+  PATH=/usr/local/cuda/bin:$PATH
+  export PATH
+  保存后，创建链接文件
+  sudo vim /etc/ld.so.conf.d/cuda.conf
+  按a进入插入模式，增加下面一行
+  /usr/local/cuda/lib64
+
+
