@@ -43,4 +43,23 @@
   按a进入插入模式，增加下面一行
   /usr/local/cuda/lib64
 
+6.anaconda2 install methods
+  sudo chmod 777 Anaconda2-4.3.1-Linux-x86_64.sh
+  souce ~/.bashrc
+  conda list
 
+7. #intall some neccesary lib
+   sudo apt-get install libatlas-base-dev libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler
+
+8. $sudo vim ~/.bashrc
+   export PYTHONPATH=/home/zhonglin/caffe/python:$PYTHONPATH
+   export CAFFE_HOME=/home/zhonglin/caffe:$CAFFE_HOME
+   
+   $sudo ldconfig
+   sudo apt-get install python-numpy
+   
+   $sudo ~/caffe/Makefile.config
+   line85 add:
+   INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+  
+   cd ~/caffe; sudo make pycaffe
