@@ -66,10 +66,14 @@
 
 
    Q1:can not find module skimage.io
-   python-matplotlib python-sklearn python-skimage
-  
+   sudo apt-get install python-matplotlib python-sklearn python-skimage
+   sudo apt-get install python-numpy python-scipy python-matplotlib python-sklearn python-skimage python-h5py python-protobuf python-leveldb python-networkx python-nose python-pandas python-gflags Cython ipython;
+   sudo apt-get update
+   
    Q2:ImportError: No module named google.protobuf.internal
    sudo chmod 777 -R anaconda2
    conda install protobuf
    vim ~/.bashrc
    export PATH="/home/zhonglin/anaconda2/bin:/anaconda2/lib/python2.7/site-packages:$PATH"
+
+   
