@@ -6,7 +6,6 @@ sudo apt-get install python-pip    #for pip
 sudo apt-get install python3-pip   #for pip3
 sudo pip3 list
 
-
 #install java/jdk environment
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -33,6 +32,8 @@ sudo ln -s /usr/local/lib/pycharm-community-2018.2.4/bin/pycharm.sh /usr/bin/pyc
 dpkg -i **.deb  #dpkg install *** software
 dpkg -r **.deb  #dpkg remove  *** software
 
+#install anaconda
+https://blog.csdn.net/qq_22080019/article/details/80249114
 
 ===========================install nvidia driver and cuda and cudnn version for GTX 960===================
 #list your driver infomation
@@ -49,9 +50,28 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 driver   : nvidia-384 - distro non-free recommended
 
 sudo apt-get install nvidia-384
+sudo nvidia-smi
+sudo watch -n 1 nvidia-smi
+sudo cat /proc/driver/nvidia/version
 
+#before installed, check the environment
+lspci | grep -i nvidia
+uname -m && cat /etc/*release
+gcc --version
+uname -r
+sudo apt-get install linux-headers-$(uname -r)
+
+
+https://www.cnblogs.com/zengcv/p/6564517.html
 https://www.cnblogs.com/jinggege/p/5766146.html
+https://developer.nvidia.com/cuda-gpus
+
+
+https://developer.nvidia.com/rdp/cudnn-archive
+for GTX960, Compute Capability is 5.2, we download cudnn 5.x # web-link refre to https://developer.nvidia.com/cuda-gpus
+https://developer.nvidia.com/cuda-toolkit-archive
+for GTX960,
 
 
 
-
+note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then install NVIDIA Driver again.
