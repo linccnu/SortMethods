@@ -2,6 +2,7 @@ $git config --global user.name  "linccnu"
 $git config --global user.email "971189094@qq.com"
 
 $ssh-keygen -t rsa -C "971189094@qq.com"
+$ssh-keygen -t rsa -C "lin_nudt0625@163.com"
 "set id_rsa.pub ssh key in github
 
 "test ssh"
