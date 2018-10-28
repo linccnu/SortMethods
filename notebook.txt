@@ -1,0 +1,3 @@
+#python ftp website, which can open in browser and can download by wget tool
+https://www.python.org/ftp/python/
+
