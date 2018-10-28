@@ -1,3 +1,57 @@
 #python ftp website, which can open in browser and can download by wget tool
 https://www.python.org/ftp/python/
 
+#install pip or pip3
+sudo apt-get install python-pip    #for pip
+sudo apt-get install python3-pip   #for pip3
+sudo pip3 list
+
+
+#install java/jdk environment
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo sudo apt-get install oracle-java8-installer  # while continue a long time, waiting...
+
+# check jdk environment
+java -version
+javac -version
+
+# set jdk environment path in ~/.bashrc, then source ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+# download pycharm-community software
+http://www.jetbrains.com/pycharm/download/
+sudo tar -xzvf pycharm-community-2018.2.4.tar.gz
+sudo mv pycharm-community-2018.2.4 /usr/local/lib
+sudo ln -s /usr/local/lib/pycharm-community-2018.2.4/bin/pycharm.sh /usr/bin/pycharm-community
+
+
+------------------------------------------------
+dpkg -i **.deb  #dpkg install *** software
+dpkg -r **.deb  #dpkg remove  *** software
+
+
+===========================install nvidia driver and cuda and cudnn version for GTX 960===================
+#list your driver infomation
+lspci  | grep -i vga
+
+# list the driver version, csdn web link:https://blog.csdn.net/MD2017/article/details/79039490
+ubuntu-drivers devices
+result as following:
+zhonglin@B85M-D3V-A:~/Downloads$ ubuntu-drivers devices
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+vendor   : NVIDIA Corporation
+modalias : pci:v000010DEd00001401sv00001B4Csd0000116Fbc03sc00i00
+driver   : xserver-xorg-video-nouveau - distro free builtin
+driver   : nvidia-384 - distro non-free recommended
+
+sudo apt-get install nvidia-384
+
+https://www.cnblogs.com/jinggege/p/5766146.html
+
+
+
+
