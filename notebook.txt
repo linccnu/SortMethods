@@ -73,5 +73,42 @@ https://developer.nvidia.com/cuda-toolkit-archive
 for GTX960,
 
 
-
 note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then install NVIDIA Driver again.
+
+
+===================================install docker and nvidia-docker==============================================
+#install docker
+sudo apt-get install wget
+sudo wget -qO- https://get.docker.com/ |sh   #O is upper alphabet
+note: If you would like to use Docker as a non-root user, you should now consider
+adding your user to the "docker" group with something like:
+    sudo usermod -aG docker zhonglin
+#Test docker
+sudo service docker start
+sudo docker run hello-world
+
+
+#install nvidia-docker
+sudo curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+sudo curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+done!
+
+#some command about docker and nvidia-docker
+sudo docker images                                                          #list docker images
+sudo docker load --input ccf_facerecognition.rar                            #load docker image
+sudo docker save -o ccf_facerecognition.rar ccf_facerecognition:latest      #save docker image
+sudo nvidia-docker build -t ccf_facerecognition .                           #using Dockerfile to generate image
+
+#some website link
+https://blog.csdn.net/xiangxianghehe/article/details/81216424
+https://blog.csdn.net/cdknight_happy/article/details/80819413
+https://github.com/NVIDIA/nvidia-docker                 #!!!!!!!!!!!!11
+
+===============================docker images in github============================================
+https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
+https://hub.docker.com/r/tensorflow/tensorflow/tags/
+
+sudo nvidia-docker run -v /home/zhonglin/workspace:/data -itd --name tensorflow ufoym/deepo:tensorflow-py36  /bin/bash
