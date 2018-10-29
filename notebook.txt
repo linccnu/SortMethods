@@ -108,17 +108,14 @@ sudo nvidia-docker build -t ccf_facerecognition .                           #usi
 #some website link
 https://blog.csdn.net/xiangxianghehe/article/details/81216424
 https://blog.csdn.net/cdknight_happy/article/details/80819413
-<<<<<<< HEAD
-https://github.com/NVIDIA/nvidia-docker                 #!!!!!!!!!!!!11
+https://github.com/NVIDIA/nvidia-docker                 #!!!!!!!!!!!!
 
 ===============================docker images in github============================================
 https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
 
 sudo nvidia-docker run -v /home/zhonglin/workspace:/data -itd --name tensorflow ufoym/deepo:tensorflow-py36  /bin/bash
-=======
 
 ===============================docker images in github============================================
 https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
->>>>>>> d0b59288262646d90157013dfcde92243ec27541
