@@ -1,15 +1,15 @@
-#python ftp website, which can open in browser and can download by wget tool
+# python ftp website, which can open in browser and can download by wget tool
 https://www.python.org/ftp/python/
 
-#install pip or pip3
+# install pip or pip3
 sudo apt-get install python-pip    #for pip
 sudo apt-get install python3-pip   #for pip3
 sudo pip3 list
 
-#install java/jdk environment
+# install java/jdk environment
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo sudo apt-get install oracle-java8-installer  # while continue a long time, waiting...
+sudo apt-get install oracle-java8-installer  # while continue a long time, waiting...
 
 # check jdk environment
 java -version
@@ -27,16 +27,21 @@ sudo tar -xzvf pycharm-community-2018.2.4.tar.gz
 sudo mv pycharm-community-2018.2.4 /usr/local/lib
 sudo ln -s /usr/local/lib/pycharm-community-2018.2.4/bin/pycharm.sh /usr/bin/pycharm-community
 
+# Using the third source to install pycharm-community
+sudo add-apt-repository ppa:mystic-mirage/pycharm
+sudo apt-get update
+sudo apt install pycharm-community
+
 
 ------------------------------------------------
 dpkg -i **.deb  #dpkg install *** software
 dpkg -r **.deb  #dpkg remove  *** software
 
-#install anaconda
+# install anaconda
 https://blog.csdn.net/qq_22080019/article/details/80249114
 
 ===========================install nvidia driver and cuda and cudnn version for GTX 960===================
-#list your driver infomation
+# list your driver infomation
 lspci  | grep -i vga
 
 # list the driver version, csdn web link:https://blog.csdn.net/MD2017/article/details/79039490
@@ -54,7 +59,7 @@ sudo nvidia-smi
 sudo watch -n 1 nvidia-smi
 sudo cat /proc/driver/nvidia/version
 
-#before installed, check the environment
+# before installed, check the environment
 lspci | grep -i nvidia
 uname -m && cat /etc/*release
 gcc --version
@@ -77,21 +82,17 @@ note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then inst
 
 
 ===================================install docker and nvidia-docker==============================================
-#install docker
+# install docker
 sudo apt-get install wget
 sudo wget -qO- https://get.docker.com/ |sh   #O is upper alphabet
 note: If you would like to use Docker as a non-root user, you should now consider
 adding your user to the "docker" group with something like:
     sudo usermod -aG docker zhonglin
-#Test docker
+# Test docker
 sudo service docker start
 sudo docker run hello-world
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d0b59288262646d90157013dfcde92243ec27541
-#install nvidia-docker
+# install nvidia-docker
 sudo curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 sudo curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
@@ -99,13 +100,13 @@ sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 done!
 
-#some command about docker and nvidia-docker
+# some command about docker and nvidia-docker
 sudo docker images                                                          #list docker images
 sudo docker load --input ccf_facerecognition.rar                            #load docker image
 sudo docker save -o ccf_facerecognition.rar ccf_facerecognition:latest      #save docker image
 sudo nvidia-docker build -t ccf_facerecognition .                           #using Dockerfile to generate image
 
-#some website link
+# some website link
 https://blog.csdn.net/xiangxianghehe/article/details/81216424
 https://blog.csdn.net/cdknight_happy/article/details/80819413
 https://github.com/NVIDIA/nvidia-docker                 #!!!!!!!!!!!!
@@ -119,3 +120,15 @@ sudo nvidia-docker run -v /home/zhonglin/workspace:/data -itd --name tensorflow 
 ===============================docker images in github============================================
 https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
+
+ImportError: No module named '_tkinter'
+sudo apt-get install python3-tk
+
+# set java environment
+export JAVA_HOME=/opt/java/jdk1.8
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+
+update-alternatives --config java
