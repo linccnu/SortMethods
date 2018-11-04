@@ -30,7 +30,9 @@ sudo ln -s /usr/local/lib/pycharm-community-2018.2.4/bin/pycharm.sh /usr/bin/pyc
 # Using the third source to install pycharm-community
 sudo add-apt-repository ppa:mystic-mirage/pycharm
 sudo apt-get update
-sudo apt install pycharm-community
+sudo apt-get install pycharm-community
+# You can also download pycharm-community software in following website, and install it off-line
+http://www.jetbrains.com/pycharm/download/#section=linux
 
 
 ------------------------------------------------
