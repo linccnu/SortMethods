@@ -140,3 +140,8 @@ https://blog.csdn.net/lijiecong/article/details/78339078
 http://docs.anaconda.com/anaconda/install/linux/
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
 $bash ~/Anaconda3-2.3.0-Linux-x86_64.sh       ------python3.4.3
+
+
+# nvidia images with cuda and cudnn versions
+https://gitlab.com/nvidia/cuda/
+https://hub.docker.com/r/library/ubuntu/
