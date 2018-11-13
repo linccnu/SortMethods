@@ -154,3 +154,14 @@ https://hub.docker.com/r/library/ubuntu/
 git branch -d branch_name                   # delete local branch
 git push origin --delete branch_name        # delete remote branch
 git reset HEAD [files]
+
+# pull images from Dockerfile
+docker build -f Dockerfile.jdk -t deep_env_jdk:zhonglin .
+
+# update g++ from 4.8 to 5.x
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install software-properties-common  #if necessary
+sudo apt-get install gcc-5 g++-5
+sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc -f
+sudo ln -s /usr/bin/g++-5 /usr/bin/g++ -f
