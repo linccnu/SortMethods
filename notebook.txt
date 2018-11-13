@@ -109,6 +109,8 @@ sudo docker load --input ccf_facerecognition.rar                            #loa
 sudo docker save -o ccf_facerecognition.rar ccf_facerecognition:latest      #save docker image
 sudo nvidia-docker build -t ccf_facerecognition .                           #using Dockerfile to generate image
 
+sudo nvidia-docker run -p 8888:8888 -p 6006:6006 -v /home/zhonglin/workspace:/data -itd --name tensorflow ufoym/deepo:tensorflow-py36  /bin/bash
+
 # some website link
 https://blog.csdn.net/xiangxianghehe/article/details/81216424
 https://blog.csdn.net/cdknight_happy/article/details/80819413
@@ -117,8 +119,8 @@ https://github.com/NVIDIA/nvidia-docker                 #!!!!!!!!!!!!
 ===============================docker images in github============================================
 https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
-
-sudo nvidia-docker run -v /home/zhonglin/workspace:/data -itd --name tensorflow ufoym/deepo:tensorflow-py36  /bin/bash
+https://github.com/matterport/Mask_RCNN
+https://hub.docker.com/r/waleedka/modern-deep-learning/
 
 ===============================docker images in github============================================
 https://github.com/ufoym/deepo                          #recommendation. It contains almost all the training frame you want.
@@ -146,3 +148,9 @@ $bash ~/Anaconda3-2.3.0-Linux-x86_64.sh       ------python3.4.3
 # nvidia images with cuda and cudnn versions
 https://gitlab.com/nvidia/cuda/
 https://hub.docker.com/r/library/ubuntu/
+
+
+# some useful git command
+git branch -d branch_name                   # delete local branch
+git push origin --delete branch_name        # delete remote branch
+git reset HEAD [files]
