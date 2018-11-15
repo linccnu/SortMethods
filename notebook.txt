@@ -138,11 +138,13 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 update-alternatives --config java
 
-# anaconda download website
+# anaconda download website and install annconda environment
 https://blog.csdn.net/lijiecong/article/details/78339078
 http://docs.anaconda.com/anaconda/install/linux/
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+https://repo.continuum.io/archive/
 $bash ~/Anaconda3-2.3.0-Linux-x86_64.sh       ------python3.4.3
+https://conda.io/docs/user-guide/tasks/manage-python.html
 
 
 # nvidia images with cuda and cudnn versions
