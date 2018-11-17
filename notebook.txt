@@ -141,9 +141,10 @@ update-alternatives --config java
 # anaconda download website and install annconda environment
 https://blog.csdn.net/lijiecong/article/details/78339078
 http://docs.anaconda.com/anaconda/install/linux/
-https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
-https://repo.continuum.io/archive/
-$bash ~/Anaconda3-2.3.0-Linux-x86_64.sh       ------python3.4.3
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/  # recommend
+https://repo.continuum.io/archive/                      # deprecated. very slow when download
+$bash ~/Anaconda3-2.3.0-Linux-x86_64.sh                 ------python3.4.3
+$bash /workspace/Anaconda3-4.2.0-Linux-x86_64.sh        ------python3.5.2
 https://conda.io/docs/user-guide/tasks/manage-python.html
 
 
