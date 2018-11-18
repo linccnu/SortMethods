@@ -143,8 +143,11 @@ https://blog.csdn.net/lijiecong/article/details/78339078
 http://docs.anaconda.com/anaconda/install/linux/
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/  # recommend
 https://repo.continuum.io/archive/                      # deprecated. very slow when download
-$bash ~/Anaconda3-2.3.0-Linux-x86_64.sh                 ------python3.4.3
+$bash ~/Anaconda3-2.3.0-Linux-x86_64.sh                 ------python3.4.3   [without jupyter]
 $bash /workspace/Anaconda3-4.2.0-Linux-x86_64.sh        ------python3.5.2
+$bash /workspace/Anaconda3-5.0.0-Linux-x86_64.sh        ------python3.6.2
+$bash /workspace/Anaconda3-5.2.0-Linux-x86_64.sh        ------python3.6.5
+$bash /workspace/Anaconda3-5.3.0-Linux-x86_64.sh        ------python3.6.7
 https://conda.io/docs/user-guide/tasks/manage-python.html
 
 
@@ -168,3 +171,17 @@ sudo apt-get install software-properties-common  #if necessary
 sudo apt-get install gcc-5 g++-5
 sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc -f
 sudo ln -s /usr/bin/g++-5 /usr/bin/g++ -f
+
+# jupter notebook
+step1: install anaconda3, if the jupyter is not exist, 'conda install jupyter' install it.
+step2: vim ~/.jupyter/jupyter_notebook_config.py
+            c.NotebookApp.ip = '*'
+            c.NotebookApp.open_browser = False
+            c.NotebookApp.token = ''
+            c.NotebookApp.port = 8888
+step3: jupyter notebook [path]    eg:jupyter notebook /home
+step4: a)If you are not in the docker container, open browser type website: http://localhost:8888
+       b)But if you are in the docker container, you should run the create the container
+         with parameter -p host_port:container_port, then in browser type website: http://localhost:host_port
+       create a container example:
+       nvidia-docker run -p 8887:8888 -v /home/zhonglin:/host -itd --name jupyter_ana ufoym/deepo:tensorflow-py36 /bin/bash
