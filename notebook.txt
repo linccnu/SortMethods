@@ -34,6 +34,9 @@ sudo apt-get install pycharm-community
 # You can also download pycharm-community software in following website, and install it off-line
 http://www.jetbrains.com/pycharm/download/#section=linux
 
+[Error]:add-apt-repository: command not found
+apt-get install software-properties-common python-software-properties
+
 
 ------------------------------------------------
 dpkg -i **.deb  #dpkg install *** software
@@ -185,3 +188,5 @@ step4: a)If you are not in the docker container, open browser type website: http
          with parameter -p host_port:container_port, then in browser type website: http://localhost:host_port
        create a container example:
        nvidia-docker run -p 8887:8888 -v /home/zhonglin:/host -itd --name jupyter_ana ufoym/deepo:tensorflow-py36 /bin/bash
+
+   tip:https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
