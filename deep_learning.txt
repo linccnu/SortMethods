@@ -1,0 +1,4 @@
+# The file store/save the website link
+1.https://github.com/chiphuyen/sotawhat
+  https://sotawhat.herokuapp.com/#/
+2.http://neuralnetworksanddeeplearning.com/index.html
