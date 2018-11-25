@@ -190,3 +190,7 @@ step4: a)If you are not in the docker container, open browser type website: http
        nvidia-docker run -p 8887:8888 -v /home/zhonglin:/host -itd --name jupyter_ana ufoym/deepo:tensorflow-py36 /bin/bash
 
    tip:https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+
+jt -f inconsolata -t chesterish
+jt -t oceans16 -f fira -fs 13 -cellw 90% -ofs 11 -dfs 11 -T
+jt -t onedork -fs 95 -altp -tfs 11 -ofs 11 -nfs 115 -cellw 90% -T
