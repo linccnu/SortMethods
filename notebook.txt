@@ -194,3 +194,27 @@ step4: a)If you are not in the docker container, open browser type website: http
 jt -f inconsolata -t chesterish
 jt -t oceans16 -f fira -fs 13 -cellw 90% -ofs 11 -dfs 11 -T
 jt -t onedork -fs 95 -altp -tfs 11 -ofs 11 -nfs 115 -cellw 90% -T
+
+
+# install openmpi
+1.download openmpi package off-line
+    https://www.open-mpi.org/software/ompi/v3.1/
+2.extract target and compile
+    tar -xzvf openmpi-3.1.tar.gz
+    mkdir -p /usr/local/openmpi
+    cd openmpi-3.1
+    ./configure --prefix=/usr/local/openmpi
+3.install
+    make all
+    make install
+4.set environment in .bashrc
+    vim ~/.bashrc
+    export PATH=$PATH:/usr/local/openmpi/bin
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/openmpi/lib/
+
+    source ~/.bashrc
+    ldconfig
+5.test
+    cd examples
+    make
+    mpirun -np 8 hello_c
