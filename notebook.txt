@@ -226,3 +226,20 @@ add-apt-repository ppa:fkrull/deadsnakes
 apt-get update
 apt-get install python2.7
 # apt-get install python3.5
+
+# imread
+import cv2
+image = cv2.imread(file_name)  # bgr 0-255
+height, width, channel = image.shape
+
+from PIL import Image
+image = Image.open(file_name)  # rgb
+width, height  = image.shape
+
+import skimage
+from skimage import io
+image = io.imread(file_name)  #rgb 0-255
+height, width, channel = image.shape
+
+caffe.io.load_image(file_name) # rgb  0-1
+
