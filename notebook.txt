@@ -147,6 +147,7 @@ http://docs.anaconda.com/anaconda/install/linux/
 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/  # recommend
 https://repo.continuum.io/archive/                      # deprecated. very slow when download
 $bash ~/Anaconda3-2.3.0-Linux-x86_64.sh                 ------python3.4.3   [without jupyter]
+$bash /workspace/Anaconda2-5.3.0-Linux-x86_64.sh        ------python2.7.15
 $bash /workspace/Anaconda3-4.2.0-Linux-x86_64.sh        ------python3.5.2
 $bash /workspace/Anaconda3-5.0.0-Linux-x86_64.sh        ------python3.6.2
 $bash /workspace/Anaconda3-5.2.0-Linux-x86_64.sh        ------python3.6.5
@@ -252,12 +253,13 @@ install steps:
 2) echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 3) echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 4) echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-5) exec $SHELL -l   # Restart your shell so that the path changes take effect
+5) exec $SHELL      # Restart your shell so that the path changes take effect
 6) source ~/.bashrc
 
 
 Note: Before run command 'pyenv install 3.6.7', install the following dependence.
-1.sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+0. apt-get update
+1. sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
   libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
   xz-utils tk-dev
 
@@ -270,5 +272,7 @@ Note: Before run command 'pyenv install 3.6.7', install the following dependence
 Then, you can also use conda to install tensorflow-gpu
 
 Other commands, you can refer to https://github.com/pyenv/pyenv/blob/master/COMMANDS.md
+
+pyenv local --unset
 
 # ======================pyenv install=========================end
