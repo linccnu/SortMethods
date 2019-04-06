@@ -269,4 +269,6 @@ Note: Before run command 'pyenv install 3.6.7', install the following dependence
 
 Then, you can also use conda to install tensorflow-gpu
 
+Other commands, you can refer to https://github.com/pyenv/pyenv/blob/master/COMMANDS.md
+
 # ======================pyenv install=========================end
