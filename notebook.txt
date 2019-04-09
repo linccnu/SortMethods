@@ -71,6 +71,9 @@ gcc --version
 uname -r
 sudo apt-get install linux-headers-$(uname -r)
 
+# Add apt repository
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
 
 https://www.cnblogs.com/zengcv/p/6564517.html
 https://www.cnblogs.com/jinggege/p/5766146.html
@@ -267,7 +270,9 @@ Note: Before run command 'pyenv install 3.6.7', install the following dependence
 2. pyenv install 3.6.7
 3. pyenv versions
 4. pyenv local(global) 3.6.7
-5. pyenv install anaconda3-4.2.0
+5. exec $SHELL
+6. pyenv install anaconda3-4.2.0
+7. pyenv rehash
 
 Then, you can also use conda to install tensorflow-gpu, for example
 conda install tensorflow-gpu
