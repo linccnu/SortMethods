@@ -83,7 +83,7 @@ https://developer.nvidia.com/cuda-gpus
 https://developer.nvidia.com/rdp/cudnn-archive
 for GTX960, Compute Capability is 5.2, we download cudnn 5.x # web-link refre to https://developer.nvidia.com/cuda-gpus
 https://developer.nvidia.com/cuda-toolkit-archive
-for GTX960,
+for GTX960, CUDA 8.0 and cuDNN V5.1 is just ok.
 
 
 note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then install NVIDIA Driver again.
