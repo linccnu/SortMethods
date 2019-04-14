@@ -2,3 +2,10 @@
 1.https://github.com/chiphuyen/sotawhat
   https://sotawhat.herokuapp.com/#/
 2.http://neuralnetworksanddeeplearning.com/index.html
+
+3.Separable convolution contain spatial separable convolution and depth-wise separable convolution.
+    Depth-wise separable convolution usually undergoes channel-wise separable convolution, then point-wise 1*1 convolution;
+    Spatial separable convolution also usually undergoes
+
+4. The 1*1 convolution can increase or reduce the channel/depth of the feature map on one hand, it can also apply
+    non-linearity, when followed by some activation layer, such as relu or elu.

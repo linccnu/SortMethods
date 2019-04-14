@@ -21,3 +21,22 @@ git push origin master
 5.we can use ctl+r command to search the history shell command you have used.
 6.we can use ctl+f/b to roll the page once. forward---f, back---b
 7.we can use ctl+u/d to roll the half page once. up---u, down---d
+
+
+# ==============================2019/04/14==================================
+# some useful git commands
+git branch -d branch_name                   # delete local branch
+git push origin --delete branch_name        # delete remote branch
+git reset HEAD [files]
+
+git commit --amend --author "zhonglin  lin_nudt0625@163.com"   # Modify git commit author information, if necessary.
+git diff --staged  # Check the modification before committing.
+git log --follow file # Show the commits that changed file.
+git config --global credential.helper "cache --timeout 900"    # tips???
+
+# git template
+git config commit.template commit-Template.txt
+git config --global commit.template ~/.gitmessage
+
+# Some git tools, such gitk, tig, smartGit
+

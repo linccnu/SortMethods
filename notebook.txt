@@ -162,12 +162,6 @@ https://conda.io/docs/user-guide/tasks/manage-python.html
 https://gitlab.com/nvidia/cuda/
 https://hub.docker.com/r/library/ubuntu/
 
-
-# some useful git command
-git branch -d branch_name                   # delete local branch
-git push origin --delete branch_name        # delete remote branch
-git reset HEAD [files]
-
 # pull images from Dockerfile
 docker build -f Dockerfile.jdk -t deep_env_jdk:zhonglin .
 
