@@ -1,7 +1,11 @@
 # The file store/save the website link
-1.https://github.com/chiphuyen/sotawhat
-  https://sotawhat.herokuapp.com/#/
-2.http://neuralnetworksanddeeplearning.com/index.html
+1.  https://github.com/chiphuyen/sotawhat
+    https://sotawhat.herokuapp.com/#/
+2.  http://neuralnetworksanddeeplearning.com/index.html     # neural network deep learning materials
+    https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/       # mirror
+    https://yeasy.gitbooks.io/docker_practice/              # docker material
+    https://gitee.com/echo_lin/events                       # gitee website
+
 
 3.Separable convolution contain spatial separable convolution and depth-wise separable convolution.
     Depth-wise separable convolution usually undergoes channel-wise separable convolution, then point-wise 1*1 convolution;
