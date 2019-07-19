@@ -1,0 +1,58 @@
+【问题1】：
+dpkg was interrupted, you must manually run 'dpkg --configure -a' to correct the problem
+
+解决办法：
+1.sudo dpkg --configure -a    如果中途中断了，再执行一两次
+2.sudo apt-get update
+3.sudo apt-get upgrade
+
+
+【问题2】：如果在window，通过ssh工具连不上ubuntu系统？
+
+解决办法：
+1.查看ssh是否开启   ps -e |grep ssh
+2.如果没有开启的话，apt-get install openssh-clinet openssh-server
+3.如果还没开启的话，sudo systemctl start ssh.service  //开启服务  
+                    或者/etc/init.d/ssh restart
+
+
+【问题3】：如果设置静态static IP？
+
+解决办法：
+默认情况下，打开sudo vi /etc/network/interfaces，如下所示：
+auto lo
+iface lo inet loopback
+
+在文件后面追加：
+auto enp2s0
+iface enp2s0 inet static
+address 192.168.15.1 #IP地址
+netmask 255.255.255.0 #掩码
+gateway 192.168.15.1 #网关
+dns-nameservers 8.8.8.8 #DN
+
+其中“enp2s0”是通过ifconfig查看得到的网口名称，192.168.15.1是网关（最后一位是1）
+
+然后重启网络：
+sudo /etc/init.d/networking restart
+
+
+【问题4】：如何设置smba服务？
+
+解决办法：
+1.安装smba服务  sudo apt-get install samba samba-common
+    
+2.vim /etc/samba/smb.conf  文末追加
+[myshare]
+comment=This is samba dir
+path=/home/myshare  
+create mask=0755
+directory mask=0755
+writeable=yes
+valid users=zhonglin
+browseable=yes
+
+3. samba服务添加用户（假设我的ubuntu用户名为：test）
+    sudo smbpasswd  -a   test  （输入访问Samba的密码）
+
+4.重启服务  sudo /etc/init.d/smbd restart   或者  sudo service smbd restart
