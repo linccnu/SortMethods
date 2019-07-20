@@ -56,3 +56,23 @@ browseable=yes
     sudo smbpasswd  -a   test  （输入访问Samba的密码）
 
 4.重启服务  sudo /etc/init.d/smbd restart   或者  sudo service smbd restart
+
+
+【问题5】：docker命令不需要sudo的方法？
+解决办法：
+1.创建一个docker组
+    sudo groupadd docker
+2.添加当前用户到docker组
+    sudo usermod -aG docker username
+3.重新开一个terminal
+
+
+【问题6】：查看cuda和cudnn的版本？
+解决办法：
+cuda版本：
+    cat /usr/local/cuda/version.txt
+cudnn版本：
+    cat /usr/include/cudnn.h | grep CUDNN_MAJOR -A 2
+    
+    
+    
