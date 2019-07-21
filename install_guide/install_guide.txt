@@ -68,6 +68,8 @@ browseable=yes
 
 
 【问题6】：查看cuda和cudnn的版本？
+ubuntu-drivers devices
+nvidia-smi
 解决办法：
 cuda版本：
     cat /usr/local/cuda/version.txt
