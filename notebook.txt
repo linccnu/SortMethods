@@ -90,9 +90,12 @@ note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then inst
 
 
 ===================================install docker and nvidia-docker==============================================
-# install docker
+# install docker, this process may take quite a while.
 sudo apt-get install wget
 sudo wget -qO- https://get.docker.com/ |sh   #O is upper alphabet
+# Or maybe you can install docker-ce as the following link: recommend!!!
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 note: If you would like to use Docker as a non-root user, you should now consider
 adding your user to the "docker" group with something like:
     sudo usermod -aG docker zhonglin
