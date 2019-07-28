@@ -46,24 +46,6 @@ dpkg -r **.deb  #dpkg remove  *** software
 https://blog.csdn.net/qq_22080019/article/details/80249114
 
 ===========================install nvidia driver and cuda and cudnn version for GTX 960===================
-# list your driver infomation
-lspci  | grep -i vga
-
-# list the driver version, csdn web link:https://blog.csdn.net/MD2017/article/details/79039490
-ubuntu-drivers devices
-result as following:
-zhonglin@B85M-D3V-A:~/Downloads$ ubuntu-drivers devices
-== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
-vendor   : NVIDIA Corporation
-modalias : pci:v000010DEd00001401sv00001B4Csd0000116Fbc03sc00i00
-driver   : xserver-xorg-video-nouveau - distro free builtin
-driver   : nvidia-384 - distro non-free recommended
-
-sudo apt-get install nvidia-384
-sudo nvidia-smi
-sudo watch -n 1 nvidia-smi
-sudo cat /proc/driver/nvidia/version
-
 # before installed, check the environment
 lspci | grep -i nvidia
 uname -m && cat /etc/*release
@@ -84,10 +66,23 @@ https://developer.nvidia.com/rdp/cudnn-archive
 for GTX960, Compute Capability is 5.2, we download cudnn 5.x # web-link refre to https://developer.nvidia.com/cuda-gpus
 https://developer.nvidia.com/cuda-toolkit-archive
 for GTX960, CUDA 8.0 and cuDNN V5.1 is just ok.
+# list your driver infomation
+lspci  | grep -i vga
 
+# list the driver version, csdn web link:https://blog.csdn.net/MD2017/article/details/79039490
+ubuntu-drivers devices
+result as following:
+zhonglin@B85M-D3V-A:~/Downloads$ ubuntu-drivers devices
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+vendor   : NVIDIA Corporation
+modalias : pci:v000010DEd00001401sv00001B4Csd0000116Fbc03sc00i00
+driver   : xserver-xorg-video-nouveau - distro free builtin
+driver   : nvidia-384 - distro non-free recommended
 
-note: if you can not enter graphic destop, using alt+ctrl+F1 to enter, then install NVIDIA Driver again.
-
+sudo apt-get install nvidia-396
+sudo nvidia-smi
+sudo watch -n 1 nvidia-smi
+sudo cat /proc/driver/nvidia/version
 
 ===================================install docker and nvidia-docker==============================================
 # install docker, this process may take quite a while.
